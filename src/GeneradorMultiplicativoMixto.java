@@ -34,11 +34,17 @@ public class GeneradorMultiplicativoMixto {
     }
     
     public float generarNumeroRandom(){
-       this.xi = generarNumeroX();
+        this.xi = generarNumeroX(); 
+        
+        float r = (float) xi / m;
        
-       float r = xi / m;
+       r = truncar(r);
        
        return r;
+    }
+    
+    private float truncar(double valor){
+        return new BigDecimal(valor).setScale(4, RoundingMode.DOWN).floatValue();
     }
      
 }
