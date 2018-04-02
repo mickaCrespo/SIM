@@ -54,7 +54,7 @@ public class GeneradorMultiplicativoMixto {
         return new BigDecimal(valor).setScale(4, RoundingMode.DOWN).floatValue();
     }
     
-        public boolean sonCoprimos (int n1, int n2){
+    public boolean sonCoprimos (int n1, int n2){
         int mayor, menor;
         boolean cop = true;
         int i = 2;
