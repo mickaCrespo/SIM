@@ -16,7 +16,21 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        //código para probar método sonCoprimos
         
+        GeneradorMultiplicativoMixto gen = new GeneradorMultiplicativoMixto(3, 3, 7, 6);
+        if (gen.sonCoprimos(20, 73)){
+            System.out.println("son coprimos");
+        }
+        else {
+            System.out.println("no son coprimos");
+        }
+        float r = gen.generarNumeroRandom();
+        System.out.println(String.format("r: %.4f", r));
+        r = gen.generarNumeroRandom();
+        System.out.println(String.format("r: %.4f", r));
+        r = gen.generarNumeroRandom();
+        System.out.println(String.format("r: %.4f", r));       
     }
     
 }
