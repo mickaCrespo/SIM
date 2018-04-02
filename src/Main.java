@@ -30,7 +30,20 @@ public class Main {
         r = gen.generarNumeroRandom();
         System.out.println(String.format("r: %.4f", r));
         r = gen.generarNumeroRandom();
-        System.out.println(String.format("r: %.4f", r));       
+        System.out.println(String.format("r: %.4f", r));
+        // esto lo use un rato para poder imprimir una serie de 20 numeros, y el while del ultimo para ir agregando de a uno.
+        float[] serie = gen.serie(20);        
+        for  (int x=0; x<serie.length; x++){
+        System.out.println("N° "+(x+1)+": "+String.format("%.4f", serie[x]));}
+        //System.out.print("Presionar ENTER para observar el siguiente valor..");
+        String s = sc.nextLine();
+        int x = serie.length+1;
+        while (!(s == null) && (s.equals(""))){
+            serie = gen.serie(21);
+            System.out.println("N° "+(x)+": "+String.format("%.4f", serie[0])+": ");
+            x++;
+            s = sc.nextLine();
+        }
     }
     
 }
