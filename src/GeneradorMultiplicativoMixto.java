@@ -27,14 +27,9 @@ public class GeneradorMultiplicativoMixto {
     }
     
 //  Metodos de la clase
-    
-    
-    private int modM(){
-        return (int) ((a*xi + c) % m);
-    }
-    
+ 
     private int generarNumeroX(){
-        int x2 = (a*xi + c) * this.modM(); 
+        int x2 = (a*xi + c) % m; 
         return x2;
     }
     
