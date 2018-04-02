@@ -29,8 +29,15 @@ public class GeneradorMultiplicativoMixto {
 //  Metodos de la clase
  
     private int generarNumeroX(){
-        int x2 = (a*xi + c) % m; 
-        return x2;
+        if (first == true){
+            this.first = false;
+            return this.seed;
+        }
+        else{
+            int x2 = (a*xi + c) % m; 
+            return x2;    
+        }
+
     }
     
     public float generarNumeroRandom(){
