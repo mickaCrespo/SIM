@@ -40,13 +40,10 @@ public class GeneradorMultiplicativoMixto {
 
     }
     
-    public float generarNumeroRandom(){
-        this.xi = generarNumeroX(); 
-        
-        float r = (float) xi / m;
-       
-       r = truncar(r);
-       
+    public float generarNumeroRandom(){       
+       this.xi = generarNumeroX();  
+       float r = (float) xi / m;      
+       r = truncar(r);    
        return r;
     }
     
