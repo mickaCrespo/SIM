@@ -50,5 +50,15 @@ public class GeneradorMultiplicativoMixto {
     private float truncar(double valor){
         return new BigDecimal(valor).setScale(4, RoundingMode.DOWN).floatValue();
     }
+    
+        
+    public void newSeed(int seed){
+        this.seed = seed;
+        this.first = true;
+    }
+    
+    public void newRun(){
+        this.first = true;
+    }
      
 }
