@@ -12,35 +12,34 @@ import java.math.RoundingMode;
  *
  * @author mickaelacrespo
  */
-public class GeneradorMultiplicativoMixto {
+public class GeneradorCongruencialMultiplicativo {
     
     private int a;
     private int m;
-    private int c;
     private int seed;
     private int xi;
     private boolean first;
 
+    
 //    Constructor
     
-    public GeneradorMultiplicativoMixto(int k, int g, int c, int seed) {
-        this.a = 1 + 4*k;
+    public GeneradorCongruencialMultiplicativo(int k, int g, int seed) {
+        this.a = 3 + 8 * k;
         this.m = (int) Math.pow(2,g);
-        this.c = c;
         this.seed = seed;
-        this.xi = seed;
         this.first = true;
     }
     
-//  Metodos de la clase
-      
+//    Metodos de la clase
+    
+          
     public int generarNumeroX(){
         if (first == true){
             this.first = false;
             return this.seed;
         }
         else{
-            int x2 = (a*xi + c) % m; 
+            int x2 = (a*xi) % m; 
             return x2;    
         }
 
@@ -65,5 +64,11 @@ public class GeneradorMultiplicativoMixto {
     public void newRun(){
         this.first = true;
     }
-     
+    
+    
+    
+           
+    
+    
+    
 }
