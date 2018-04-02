@@ -87,5 +87,13 @@ public class GeneradorMultiplicativoMixto {
     public void newRun(){
         this.first = true;
     }
+    public float[] serie(int tamañoSerie){
+       float[] v = new float[tamañoSerie];
+       for (int n = 0; n<tamañoSerie; n++){
+            float x = generarNumeroRandom();
+            v[n] = x;
+       }
+    return v;   
+   }
      
 }
