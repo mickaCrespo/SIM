@@ -20,7 +20,7 @@ public class GeneradorMultiplicativoMixto {
     
     public GeneradorMultiplicativoMixto(int k, int g, int c, int seed) {
         this.a = 1 + 4*k;
-        this.m = 2^g;
+        this.m = (int) Math.pow(2,g);
         this.c = c;
         this.seed = seed;
         this.xi = seed;
