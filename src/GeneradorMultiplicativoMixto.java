@@ -46,7 +46,7 @@ public class GeneradorMultiplicativoMixto {
     public float generarNumeroRandom(){       
        this.xi = generarNumeroX();  
        float r = (float) xi / m;      
-       r = truncar(r);    
+       //r = truncar(r);    
        return r;
     }
     
@@ -54,6 +54,30 @@ public class GeneradorMultiplicativoMixto {
         return new BigDecimal(valor).setScale(4, RoundingMode.DOWN).floatValue();
     }
     
+        public boolean sonCoprimos (int n1, int n2){
+        int mayor, menor;
+        boolean cop = true;
+        int i = 2;
+        if (n1>n2){
+            mayor = n1;
+            menor = n2;
+        }
+        else {
+            mayor = n2;
+            menor = n1;
+        }
+        int root = (int) Math.sqrt(menor);
+        while (i <= root){
+            if (menor % i == 0 && mayor % i == 0){
+                return !cop;
+            }
+            i++;
+        }
+        if (!(mayor % menor == 0)){
+            return cop;
+        }
+        else {return (!cop);}
+    }
         
     public void newSeed(int seed){
         this.seed = seed;
