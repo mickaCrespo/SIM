@@ -1,7 +1,3 @@
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,51 +15,35 @@ public class GeneradorMultiplicativoMixto {
     private int c;
     private int seed;
     private int xi;
-    private boolean first;
 
 //    Constructor
     
     public GeneradorMultiplicativoMixto(int k, int g, int c, int seed) {
         this.a = 1 + 4*k;
-        this.m = (int) Math.pow(2,g);
+        this.m = 2^g;
         this.c = c;
         this.seed = seed;
         this.xi = seed;
-        this.first = true;
     }
     
 //  Metodos de la clase
-      
-    public int generarNumeroX(){
-        if (first == true){
-            this.first = false;
-            return this.seed;
-        }
-        else{
-            int x2 = (a*xi + c) % m; 
-            return x2;    
-        }
-
+    
+    
+    private int modM(){
+        return (int) ((a*xi + c) % m);
     }
     
-    public float generarNumeroRandom(){       
-       this.xi = generarNumeroX();  
-       float r = (float) xi / m;      
-       r = truncar(r);
+    private int generarNumeroX(){
+        int x2 = (a*xi + c) * this.modM(); 
+        return x2;
+    }
+    
+    public float generarNumeroRandom(){
+       this.xi = generarNumeroX();
+       
+       float r = xi / m;
+       
        return r;
-    }
-    
-    private float truncar(double valor){
-        return new BigDecimal(valor).setScale(4, RoundingMode.DOWN).floatValue();
-    }
-    
-    public void newSeed(int seed){
-        this.seed = seed;
-        this.first = true;
-    }
-    
-    public void newRun(){
-        this.first = true;
     }
      
 }
