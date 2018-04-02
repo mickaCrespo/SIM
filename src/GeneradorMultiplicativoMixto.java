@@ -15,6 +15,7 @@ public class GeneradorMultiplicativoMixto {
     private int c;
     private int seed;
     private int xi;
+    private boolean first;    
 
 //    Constructor
     
