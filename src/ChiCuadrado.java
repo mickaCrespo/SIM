@@ -36,17 +36,20 @@ public class ChiCuadrado {
     
     private void verFrecuenciasO(){
         int n = serie.length;
-        int t = 1/ this.intervalos;
-        float x;       
-        
-//        Preguntar a Micka como carajo funciona esto porque no es facil
+        int t = 1 / this.intervalos;
+        float x;
+
         for (int i = 0; i < n; i++) {
-        
             x = serie[i];
-            int res = (int) x/t;
-            frecuenciasObservadas[res] ++;
-            
-        }     
+
+            for (int j = 0; j < this.intervalos; j++) {
+                if ((j * t) <= x && (x < ((j + 1) * t))) {
+                    frecuenciasObservadas[j]++;
+                }
+
+            }
+
+        }   
     }
     
     private float chiCuadradoCalculo(){
