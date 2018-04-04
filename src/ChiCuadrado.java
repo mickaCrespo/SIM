@@ -20,42 +20,51 @@ public class ChiCuadrado {
     public ChiCuadrado(float[] serie, int intervalos) {
         this.serie = serie;
         this.intervalos = intervalos;
-        frecuenciasObservadas = new int[intervalos];
     }
     
     
 //    Metodos de clase
     
-    private float frecuenciaEsperada(){
+    public int frecuenciaEsperada(){
         int n = serie.length;
         while (n/intervalos < 5){
             intervalos = (int) (intervalos)/2;
+//            intervalos -= 1;
         }
         return (int) (n/intervalos);
     }
     
+//    private void verFrecuenciasO(){
+//        int n = serie.length;
+//        int t = 1/ this.intervalos;
+//        float x;
+//
+//        for (int i = 0; i < n; i++) {
+//            x = serie[i];
+//
+//            for (int j = 0; j < this.intervalos; j++) {
+//                if ((j * t) <= x && (x < ((j + 1) * t))) {
+//                    frecuenciasObservadas[j]++;
+//                }
+//
+//            }
+//
+//        }   
+//    }
+    
     private void verFrecuenciasO(){
-        int n = serie.length;
-        int t = 1 / this.intervalos;
-        float x;
-
-        for (int i = 0; i < n; i++) {
-            x = serie[i];
-
-            for (int j = 0; j < this.intervalos; j++) {
-                if ((j * t) <= x && (x < ((j + 1) * t))) {
-                    frecuenciasObservadas[j]++;
-                }
-
-            }
-
-        }   
+        for (int i=0; i < serie.length; i++){
+            int x = (int) ((serie[i] / this.frecuenciaEsperada()) * serie.length );
+            frecuenciasObservadas[x] += 1;
+        }
     }
     
     private float chiCuadradoCalculo(){
         float chiCuadrado = 0;
         float fofe;
         float fe = frecuenciaEsperada();
+        frecuenciasObservadas = new int[intervalos];
+        this.verFrecuenciasO();
         
         for (int i = 0; i < intervalos; i++) {
             fofe = (frecuenciasObservadas[i] - fe);
@@ -103,17 +112,11 @@ public class ChiCuadrado {
     }
         
     public boolean calcularChiCuadrado(){
-        this.verFrecuenciasO();
         float chiCalculo = this.chiCuadradoCalculo();
         int gradosLibertad = this.intervalos - 1;
         float chiTabulado = this.chiCuadradoTabulado(gradosLibertad);
         
-        if(chiCalculo <= chiTabulado){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return chiCalculo <= chiTabulado;
         
     }
     
