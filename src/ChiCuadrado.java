@@ -77,35 +77,35 @@ public class ChiCuadrado {
         float chiCuadrado = 0;
         
         if (gL==1){
-            chiCuadrado = (float)0.004;
+            chiCuadrado = (float)3.84;
             
         }
         if (gL==2){
-            chiCuadrado = (float)0.103;
+            chiCuadrado = (float)5.99;
         }
         if (gL==3){
-            chiCuadrado = (float)0.352;
+            chiCuadrado = (float)7.81;
         }
         if (gL==4){
-            chiCuadrado = (float)0.711;
+            chiCuadrado = (float)9.49;
         }
         if (gL==5){
-            chiCuadrado = (float)1.145;
+            chiCuadrado = (float)11.1;
         }
         if (gL==6){
-            chiCuadrado = (float)1.237;
+            chiCuadrado = (float)12.6;
         }
         if (gL==7){
-            chiCuadrado = (float)1.690;
+            chiCuadrado = (float)14.1;
         }
         if (gL==8){
-            chiCuadrado = (float)2.180;
+            chiCuadrado = (float)15.5;
         }
         if (gL==9){
-            chiCuadrado = (float)2.700;
+            chiCuadrado = (float)16.9;
         }
         if (gL==10){
-            chiCuadrado = (float)3.940;
+            chiCuadrado = (float)18.3;
         }
         
         return chiCuadrado;
