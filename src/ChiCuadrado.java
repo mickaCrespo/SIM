@@ -73,42 +73,52 @@ public class ChiCuadrado {
         }  
         return chiCuadrado;                
     }
-    public float chiCuadradoTabulado(int gL){
-        float chiCuadrado = 0;
+       public float chiCuadradoTabulado(int gL){
+        double chiCuadrado = 0;
+         switch (gL) {
+            case 1:  chiCuadrado = 3.84;
+                     break;
+            case 2:  chiCuadrado = 5.99;
+                     break;
+            case 3:  chiCuadrado = 7.81;
+                     break;
+            case 4:  chiCuadrado = 9.49;
+                     break;
+            case 5:  chiCuadrado = 11.1;
+                     break;
+            case 6:  chiCuadrado = 12.6;
+                     break;
+            case 7:  chiCuadrado = 14.1;
+                     break;
+            case 8:  chiCuadrado = 15.5;
+                     break;
+            case 9:  chiCuadrado = 16.9;
+                     break;
+            case 10: chiCuadrado = 18.3;
+                     break;
+            case 11: chiCuadrado = 19.7;
+                     break;
+            case 12: chiCuadrado = 21.0;
+                     break;
+            case 13: chiCuadrado = 22.4;
+                     break;
+            case 14: chiCuadrado = 23.7;
+                     break;
+            case 15: chiCuadrado = 25.0;
+                     break;         
+            case 16: chiCuadrado = 26.3;
+                     break;
+            case 17: chiCuadrado = 27.6;
+                     break;
+            case 18: chiCuadrado = 28.9;
+                     break;
+            case 19: chiCuadrado = 30.1;
+                     break;
+            case 20: chiCuadrado = 31.4;
+                     break;         
+        }
         
-        if (gL==1){
-            chiCuadrado = (float)3.84;
-            
-        }
-        if (gL==2){
-            chiCuadrado = (float)5.99;
-        }
-        if (gL==3){
-            chiCuadrado = (float)7.81;
-        }
-        if (gL==4){
-            chiCuadrado = (float)9.49;
-        }
-        if (gL==5){
-            chiCuadrado = (float)11.1;
-        }
-        if (gL==6){
-            chiCuadrado = (float)12.6;
-        }
-        if (gL==7){
-            chiCuadrado = (float)14.1;
-        }
-        if (gL==8){
-            chiCuadrado = (float)15.5;
-        }
-        if (gL==9){
-            chiCuadrado = (float)16.9;
-        }
-        if (gL==10){
-            chiCuadrado = (float)18.3;
-        }
-        
-        return chiCuadrado;
+        return (float) chiCuadrado;
     }
         
     public boolean calcularChiCuadrado(){
