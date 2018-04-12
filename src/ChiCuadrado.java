@@ -34,6 +34,10 @@ public class ChiCuadrado {
         return (int) (n/intervalos);
     }
     
+    public int[] getFrecuenciasObservadas() {
+        return frecuenciasObservadas;
+    }
+    
 //    private void verFrecuenciasO(){
 //        int n = serie.length;
 //        int t = 1/ this.intervalos;
