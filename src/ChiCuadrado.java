@@ -34,16 +34,39 @@ public class ChiCuadrado {
         return (int) (n/intervalos);
     }
     
-    public int[] getFrecuenciasObservadas() {
-        return frecuenciasObservadas;
-    }
-    
+//    private void verFrecuenciasO(){
+//        int n = serie.length;
+//        int t = 1/ this.intervalos;
+//        float x;
+//
+//        for (int i = 0; i < n; i++) {
+//            x = serie[i];
+//
+//            for (int j = 0; j < this.intervalos; j++) {
+//                if ((j * t) <= x && (x < ((j + 1) * t))) {
+//                    frecuenciasObservadas[j]++;
+//                }
+//
+//            }
+//
+//        }   
+//    }
     
     public void verFrecuenciasO(){
         for (int i=0; i < serie.length; i++){
             int x = (int) ((serie[i] / this.frecuenciaEsperada()) * serie.length );
             frecuenciasObservadas[x] += 1;
         }
+    }
+    
+    public int[] dameFrecuenciasO(){
+        int[] frecuenciasObservadas2 = new int[intervalos];
+        for (int i=0; i < serie.length; i++){
+            int x = (int) ((serie[i] / this.frecuenciaEsperada()) * serie.length );
+            //frecuenciasObservadas[x] += 1;
+            frecuenciasObservadas2[x]++;
+        }
+        return frecuenciasObservadas2;
     }
     
     public float chiCuadradoCalculo(){

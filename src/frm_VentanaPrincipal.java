@@ -49,7 +49,6 @@ setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frame
         metodoCongruencialLineal = new javax.swing.JMenuItem();
         metodoCongruencialMultiplicativo = new javax.swing.JMenuItem();
         chiCuadrado = new javax.swing.JMenu();
-        menu_generador = new javax.swing.JMenuItem();
         menu_local = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,15 +94,7 @@ setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frame
             }
         });
 
-        menu_generador.setText("Generador");
-        menu_generador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu_generadorActionPerformed(evt);
-            }
-        });
-        chiCuadrado.add(menu_generador);
-
-        menu_local.setText("Local");
+        menu_local.setText("Abrir");
         menu_local.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_localActionPerformed(evt);
@@ -151,13 +142,8 @@ setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frame
         // TODO add your handling code here:
     }//GEN-LAST:event_chiCuadradoMouseClicked
 
-    private void menu_generadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_generadorActionPerformed
-        frm_numerosEintervalos vp = new frm_numerosEintervalos();
-        vp.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_menu_generadorActionPerformed
-
     private void menu_localActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_localActionPerformed
-       frm_numerosEintervalos vp = new frm_numerosEintervalos();
+       frm_Chi vp = new frm_Chi();
        vp.setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_menu_localActionPerformed
 
@@ -201,7 +187,6 @@ setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frame
     private javax.swing.JMenu chiCuadrado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem menu_generador;
     private javax.swing.JMenuItem menu_local;
     private javax.swing.JMenuItem metodoCongruencialLineal;
     private javax.swing.JMenuItem metodoCongruencialMultiplicativo;
