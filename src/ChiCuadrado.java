@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.util.Random;
 /**
  *
- * @author mickaelacrespo
+ * @author Michel
  */
 public class ChiCuadrado {
     
@@ -52,14 +52,14 @@ public class ChiCuadrado {
 //        }   
 //    }
     
-    private void verFrecuenciasO(){
+    public void verFrecuenciasO(){
         for (int i=0; i < serie.length; i++){
             int x = (int) ((serie[i] / this.frecuenciaEsperada()) * serie.length );
             frecuenciasObservadas[x] += 1;
         }
     }
     
-    private float chiCuadradoCalculo(){
+    public float chiCuadradoCalculo(){
         float chiCuadrado = 0;
         float fofe;
         float fe = frecuenciaEsperada();
@@ -73,39 +73,39 @@ public class ChiCuadrado {
         }  
         return chiCuadrado;                
     }
-    private float chiCuadradoTabulado(int gL){
+    public float chiCuadradoTabulado(int gL){
         float chiCuadrado = 0;
         
         if (gL==1){
-            chiCuadrado = (float)3.84;
+            chiCuadrado = (float)0.004;
             
         }
         if (gL==2){
-            chiCuadrado = (float)5.99;
+            chiCuadrado = (float)0.103;
         }
         if (gL==3){
-            chiCuadrado = (float)7.81;
+            chiCuadrado = (float)0.352;
         }
         if (gL==4){
-            chiCuadrado = (float)9.49;
+            chiCuadrado = (float)0.711;
         }
         if (gL==5){
-            chiCuadrado = (float)11.1;
+            chiCuadrado = (float)1.145;
         }
         if (gL==6){
-            chiCuadrado = (float)12.6;
+            chiCuadrado = (float)1.237;
         }
         if (gL==7){
-            chiCuadrado = (float)14.1;
+            chiCuadrado = (float)1.690;
         }
         if (gL==8){
-            chiCuadrado = (float)15.5;
+            chiCuadrado = (float)2.180;
         }
         if (gL==9){
-            chiCuadrado = (float)16.9;
+            chiCuadrado = (float)2.700;
         }
         if (gL==10){
-            chiCuadrado = (float)18.3;
+            chiCuadrado = (float)3.940;
         }
         
         return chiCuadrado;

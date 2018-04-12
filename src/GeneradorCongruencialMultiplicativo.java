@@ -72,9 +72,9 @@ public class GeneradorCongruencialMultiplicativo {
         return true;
     }
     
-    public float[] serie(int tamañoSerie){
-       float[] v = new float[tamañoSerie];
-       for (int n = 0; n<tamañoSerie; n++){
+    public float[] serie20(){
+       float[] v = new float[20];
+       for (int n = 0; n<20; n++){
             float x = generarNumeroRandom();
             v[n] = x;
        }

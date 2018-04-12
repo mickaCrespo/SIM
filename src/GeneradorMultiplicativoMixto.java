@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -46,7 +47,7 @@ public class GeneradorMultiplicativoMixto {
     public float generarNumeroRandom(){       
        this.xi = generarNumeroX();  
        float r = (float) xi / m;      
-       //r = truncar(r);    
+       r = truncar(r);    
        return r;
     }
     
@@ -87,7 +88,8 @@ public class GeneradorMultiplicativoMixto {
     public void newRun(){
         this.first = true;
     }
-    public float[] serie(int tamañoSerie){
+     
+   public float[] serie(int tamañoSerie){
        float[] v = new float[tamañoSerie];
        for (int n = 0; n<tamañoSerie; n++){
             float x = generarNumeroRandom();
@@ -95,5 +97,7 @@ public class GeneradorMultiplicativoMixto {
        }
     return v;   
    }
-     
+  
+        
+           
 }
